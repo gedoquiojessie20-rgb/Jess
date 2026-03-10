@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessie | Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #16213e 0%, #0f3460 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background: rgba(15, 52, 96, 0.95);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        nav ul {
+            list-style: none;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        nav a:hover {
+            color: #00f0ff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #00f0ff);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff, #00f0ff);
+            margin: 15px auto 0;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(22, 33, 62, 0.8), rgba(15, 52, 96, 0.8));
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.4);
+        }
+
+        .card h3 {
+            color: #00d4ff;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #b0b0b0;
+            line-height: 1.8;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card ul li {
+            padding: 10px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #b0b0b0;
+        }
+
+        .card ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #0f0f0f, #16213e);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            header p {
+                font-size: 1rem;
+            }
+
+            section h2 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Jessie</h1>
+        <p>Social Work Student | Cube Solver | Online Gamer</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="card">
+            <p>
+                Hello! My name is Jessie and I am a passionate Social Work student dedicated to making a positive impact 
+                in communities. I am deeply interested in helping others and learning about social development and community welfare.
+                <br><br>
+                Beyond my academic pursuits, I am an avid cube solver and online gaming enthusiast. These hobbies have taught me 
+                valuable lessons in problem-solving, strategic thinking, and perseverance. I believe in balancing academic excellence 
+                with personal growth and meaningful connections.
+            </p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects & Experience</h2>
+        
+        <div class="projects-grid">
+            <div class="card">
+                <h3>Cube Solving Mastery</h3>
+                <p>
+                    I have developed expertise in solving various types of cubes, from Rubik's cubes to advanced speedcubing. 
+                    This hobby enhances my logical thinking, spatial awareness, and problem-solving abilities that translate 
+                    to my academic and professional work.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Community Engagement</h3>
+                <p>
+                    Active in community awareness initiatives and volunteer work. I focus on understanding social issues, 
+                    supporting vulnerable populations, and contributing to meaningful social development programs.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Research & Writing</h3>
+                <p>
+                    Developed skills in academic research, data analysis, and report writing. I have worked on projects 
+                    examining social welfare policies and community development strategies.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+
+        <div class="card">
+            <h3>Core Competencies</h3>
+            <ul>
+                <li>Cube Solving & Speedcubing</li>
+                <li>Strategic Online Gaming</li>
+                <li>Community Awareness & Engagement</li>
+                <li>Academic Research Writing</li>
+                <li>Social Work Principles</li>
+                <li>Problem Solving & Critical Thinking</li>
+                <li>Data Analysis & Interpretation</li>
+                <li>Communication & Interpersonal Skills</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+
+        <div class="card">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> <a href="mailto:youremail@email.com" style="color: #00d4ff; text-decoration: none;">youremail@email.com</a></p>
+            <p><strong>Facebook:</strong> <a href="#" style="color: #00d4ff; text-decoration: none;">Your Facebook Profile</a></p>
+            <p><strong>GitHub:</strong> <a href="#" style="color: #00d4ff; text-decoration: none;">github.com/gedoquiojessie20</a></p>
+            <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">Feel free to reach out for collaborations, inquiries, or just to connect!</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Jessie | Portfolio Website</p>
+        <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.7;">Crafted with passion and creativity</p>
+    </footer>
+
+</body>
+</html>
